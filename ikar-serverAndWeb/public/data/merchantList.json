@@ -1,0 +1,75 @@
+{
+             "totalMerchants":2468,
+             "today": {
+                 "newMerchants": 0,
+                 "list": [{
+                     "member": "Satish Raikar",
+                     "earning": 9049,
+                     "cases": 95,
+                     "rejected": 15
+                 }, {
+                     "member": "Sanjay Jha",
+                     "earning": 6221,
+                     "cases": 45,
+                     "rejected": 1
+                 }, {
+                     "member": "Satish Chodankar",
+                     "earning": 8936,
+                     "cases": 58,
+                     "rejected": 13
+                 }, {
+                     "member": "Andrew Fernandes",
+                     "earning": 1264,
+                     "cases": 74,
+                     "rejected": 24
+                 }]
+             },
+             "week": {
+                 "newMerchants": 7,
+                 "list": [{
+                     "member": "Amanda Carpenter",
+                     "earning": 4607,
+                     "cases": 44,
+                     "rejected": 25
+                 }, {
+                     "member": "Gloria Marshall",
+                     "earning": 9224,
+                     "cases": 69,
+                     "rejected": 16
+                 }, {
+                     "member": "Victor Bell",
+                     "earning": 1260,
+                     "cases": 100,
+                     "rejected": 7
+                 }, {
+                     "member": "Gerald Wallace",
+                     "earning": 2199,
+                     "cases": 72,
+                     "rejected": 23
+                 }]
+             },
+             "month": {
+                 "newMerchants": 116,
+                 "list": [{
+                     "member": "Catherine Henderson",
+                     "earning": 788,
+                     "cases": 3,
+                     "rejected": 5
+                 }, {
+                     "member": "Kenneth Wright",
+                     "earning": 49,
+                     "cases": 4,
+                     "rejected": 20
+                 }, {
+                     "member": "Emily Gordon",
+                     "earning": 6174,
+                     "cases": 50,
+                     "rejected": 6
+                 }, {
+                     "member": "David Edwards",
+                     "earning": 4151,
+                     "cases": 2,
+                     "rejected": 22
+                 } ]
+             }
+         }

@@ -1,0 +1,55 @@
+<ion-modal-view>
+                <ion-header-bar>
+                    <h1 class="title">Purchase details</h1>
+                    
+                </ion-header-bar>
+                <ion-content class="padding">
+                 
+        <div class="im-wrapper" >
+          
+            <!-- Forms -->
+            <form   ng-show="formDisplay">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Store Name</span>
+                    <input type="text" placeholder="Store Name" required ng-model="transaction.storename" value="Raikar Goldsmith">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Amount</span>
+                    <input type="number" ng-model="transaction.amount" placeholder="Amount" required>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Description</span>
+                    <input type="text" ng-model="transaction.description"  placeholder="Description" required>
+                </label>
+               
+               
+                
+                <div class="item" id="categories">
+                    <span class="input-label">Purchased :</span>
+                        <div class="hashtag" ng-click="toggelInput($event)">#grocery</div>
+                        <div class="hashtag" ng-click="toggelInput($event)">#petrol</div>
+                        <div class="hashtag" ng-click="toggelInput($event)">#gold</div>
+                        <div class="hashtag" ng-click="toggelInput($event)">#doctor</div>
+                        <div class="hashtag" ng-click="toggelInput($event)">#hardware</div>
+                        <div class="hashtag" ng-click="toggelInput($event)">#grocery</div>
+                        <div class="hashtag addcat" ng-click="showInput()"><i class="icon ion-ios-plus"></i> other</div> 
+                    <br>
+                     <input type="text" style="display:none;" id="categoryinput"  ng-model="transaction.categoryinput"  placeholder="Item Purchased">
+                </div>
+                
+            
+                
+               
+                <button type="submit" ng-click="saveTransaction(transaction)" class="button button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1">
+                    Submit
+                </button>
+                <button ng-click="closeModal()" type="button" class="button button-assertive ink" data-ink-color="#9DEAFF" data-ink-opacity="1">
+                   Cancel
+                </button>
+                
+            </div>
+           </form>
+        </div>
+                </ion-content>
+            </ion-modal-view>

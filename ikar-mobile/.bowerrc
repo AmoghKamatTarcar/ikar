@@ -1,0 +1,5 @@
+{
+  "directory": "www/lib",
+   "proxy": "http://visible_curlproxy:Pspl%26123@gaproxy.persistent.co.in:8080",
+  "https-proxy": "http://visible_curlproxy:Pspl%26123@gaproxy.persistent.co.in:8080"
+}

@@ -1,0 +1,46 @@
+
+<ion-view view-title="Login" name="login-view">
+  <ion-content class="">
+      <div class="preloader-wrapper">
+      <!--svg viewBox="0 0 700 300">
+
+				<symbol id="s-text">
+					<text text-anchor="middle" x="50%" y="50%" dy=".35em">
+						iKa₹
+					</text>
+				</symbol>
+
+				<use xlink:href="#s-text" class="text"></use>
+				<use xlink:href="#s-text" class="text"></use>
+				<use xlink:href="#s-text" class="text"></use>
+				<use xlink:href="#s-text" class="text"></use>
+				<use xlink:href="#s-text" class="text"></use>
+
+			</svg-->
+         <div class="circle-wraper">
+          <div class="circle">
+            <div class="circle2">
+                <div class="circle-text">₹</div>
+          </div>
+          </div>
+             </div> 
+      <div class="preload-text">iKa₹</div>
+      <div class="preload-text-sub">tax manager</div>
+      </div>
+      
+      <div class="preloader-bottom"></div>
+      <div class="login-form-animate" ng-controller="LoginCtrl">
+          <form ng-submit="login()">
+      <div class="list list-inset">
+          <label class="item item-input">
+              <input type="text" placeholder="PAN" ng-model="data.username"  required>
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="data.password" required>
+          </label>
+      </div>
+      <button class="button button-block button-dark" type="submit">Login</button>
+              </form>
+          </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,37 @@
+<ion-view view-title="Profile">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="hero slide-up" style="background-image: url('img/material-graphite.jpg');">
+            <div class="content">
+                <div class="avatar" style="background-image: url('img/profile.jpg');"></div>
+                <h3><a class="light">Amogh Kamat Tarcar</a></h3>
+                <h4>ak_56</h4>
+            </div>
+        </div>
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.activity" class="tab-item">
+                <i class="icon ion-arrow-graph-up-right"></i> Activity
+            </a>
+            <a ui-sref="app.friends" class="tab-item">
+                <i class="icon ion-ios-cart"></i> Stores
+            </a>
+            <a ui-sref="app.gallery" class="tab-item">
+                <i class="icon ion-document-text"></i> Proofs
+            </a>
+        </div>
+        
+        <div class="list animate-fade-slide-in-right">
+            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
+                <img src="img/small-logo.jpg">
+                <h2>Purchase of 600 ₹</h2>
+                <p>#groccery</p>
+                <i class="icon ion-chatbubble muted"></i>
+            </a>
+            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
+                <img src="img/small-logo.jpg">
+                <h2>Purchase of 12000 ₹</h2>
+                <p>#gold</p>
+                <i class="icon ion-chatbubble muted"></i>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
