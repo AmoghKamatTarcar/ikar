@@ -1,7 +1,7 @@
-app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout,$ionicPlatform,$cordovaBarcodeScanner,$ionicLoading, $ionicModal, $ionicPopup, $http,ionicMaterialInk) {
+app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout,$ionicPlatform,$cordovaBarcodeScanner,$ionicLoading, $ionicModal, $ionicPopup, $http,ionicMaterialInk,$cordovaGeolocation) {
         // Form data for the login modal
         $scope.loginData = {};
-        $scope.serverUrl = "http://10.244.50.2:3000/"
+        $scope.serverUrl = "http://192.168.43.188:3000/"
         $scope.currentUserPAN = 'ARDP1165R';
     
         var navIcons = document.getElementsByClassName('ion-navicon');
@@ -119,7 +119,7 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             });
             
             $http.post($scope.serverUrl+'api/transactions', data).success(function(data, status) {
-                $scope.showPopup('Balance will be added to your account', 'Transaction Saved');
+                $scope.showPopup('Points will be added to your account in 48 hrs', 'Transaction Saved');
                 $scope.closeModal();
             })
             
@@ -144,6 +144,29 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
               });
+        }
+        
+        var posOptions = {timeout: 10000, enableHighAccuracy: false};
+        $cordovaGeolocation
+        .getCurrentPosition(posOptions)
+        .then(function (position) {
+          var lat  = position.coords.latitude
+          var long = position.coords.longitude
+          $scope.position = position.coords;
+          $scope.displayComplainMap(position.coords)
+        }, function(err) {
+          // error
+        });
+        $scope.displayComplainMap = function(userPosition)
+        {
+           
+                console.log('here');
+                var mapUrl = "http://maps.google.com/maps/api/staticmap?center=";
+                mapUrl = mapUrl + userPosition.latitude + ',' + userPosition.longitude;
+                mapUrl = mapUrl + '&zoom=15&size=280x100&maptype=roadmap&sensor=true,&markers=color:green%7Clabel:S%7C'+userPosition.latitude + ',' + userPosition.longitude;
+                $scope.mapUrl = mapUrl;
+               /* var imgElement = document.getElementById("map");
+                imgElement.src = mapUrl;*/
         }
        
     });

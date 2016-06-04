@@ -70,19 +70,35 @@ app.get('/getMerchantComplains',function(req,res){
         Complain.find(function(error,data){
                 res.contentType('application/json');
                 res.send(JSON.stringify(data));
+                }).sort([['_id', -1]]);
+
+})
+app.get('/getMerchantComplainsById/:id',function(req,res){
+    
+        Complain.find({userPAN :req.params.id},function(error,data){
+                res.contentType('application/json');
+                res.send(JSON.stringify(data));
                 });
 
 })
 app.get('/getEntryForMerchant/:id',function(req,res){
     
-        Transaction.find(function(error,data){
+        Transaction.find({merchantTIN :req.params.id},function(error,data){
+                res.contentType('application/json');
+                res.send(JSON.stringify(data));
+                });
+
+})
+app.get('/getMerchantProfile/:id',function(req,res){
+    
+        Merchant.find({PAN :req.params.id},function(error,data){
                 res.contentType('application/json');
                 res.send(JSON.stringify(data));
                 });
 
 })
 
-
+/* next 2 services to be verfied */
 var merchantEntryBuildererchants = require('./routes/buildEntryForMerchant');
 app.get('/buildEntryForMerchant/:id', function(req,res){
   var merchant = req.params.id;
@@ -119,7 +135,7 @@ app.get('/addEntryForMerchantToBlock/:id', function(req,res){
         var merchantResultBuilderJSON =  JSON.stringify(merchantResultBuilder);       
         
         cd(FACTOM_INSTALL_DIR);  
-        
+        var fMEntryHash='';
         exec('echo "'+merchantResultBuilderJSON+'" |  ./factom-cli put -e newextid -e anotherextid -c 7be48d59cab630a0998dd151fdb955d7ba21b5c8bec82fe538bdb1c79e5b0076 zeros', function(code, stdout, stderr) {
             if(code==0){
                 console.log('Program output:' ); 
@@ -129,7 +145,7 @@ app.get('/addEntryForMerchantToBlock/:id', function(req,res){
            
         }) ;
         res.contentType('application/json');
-        res.send(JSON.stringify(merchantResultBuilder));     
+        res.send(JSON.stringify(fMEntryHash));     
         
     });
 });

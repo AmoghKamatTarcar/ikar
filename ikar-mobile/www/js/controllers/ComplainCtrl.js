@@ -34,7 +34,7 @@ app.controller('ComplainCtrl', function ($scope, $stateParams, ionicMaterialInk 
     
     $scope.saveComplain = function(complain){
             complain.userPAN = $scope.currentUserPAN;
-            complain.merchantLocation = $scope.position;
+            complain.merchantLocation = $scope.position.lattitude+','+$scope.position.longitude;
             complain.imageproof = '';
             complain.status = 0;
             
